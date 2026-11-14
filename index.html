@@ -1,5 +1,53 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WoundQuest 2.0 – Lernstation</title><style>
 :root{font-family:system-ui,sans-serif;background:#eef4f5;color:#19333e}*{box-sizing:border-box}body{margin:0}main{max-width:880px;margin:auto;padding:16px 14px 70px}h1{font-size:27px;margin:8px 0;color:#087f80}h2{font-size:21px}h3{font-size:17px}.card{background:white;border:1px solid #dae6e8;border-radius:18px;padding:19px;margin:13px 0;box-shadow:0 4px 20px #2341}p{line-height:1.5}.muted{color:#627680;font-size:14px}.badge{display:inline-block;background:#dff4ef;color:#056f69;border-radius:20px;padding:6px 10px;font-size:12px;font-weight:750}button{font:inherit;font-weight:700;border:0;border-radius:11px;padding:12px 15px;margin:4px;background:#087f80;color:white;cursor:pointer}button.secondary{background:#e7f1f2;color:#254550}button:disabled{opacity:.45;cursor:default}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.tile{background:#f2f7f7;color:#19333e;border:2px solid #dce9e9;text-align:left;min-height:70px}.tile.selected{background:#def5ed;border-color:#008e7c}.tile.bad{background:#ffebeb;border-color:#d96d67}.notice{padding:12px;border-left:4px solid #c58a34;background:#fff5e6;border-radius:8px}.good{padding:12px;border-left:4px solid #16845c;background:#e9f8f0;border-radius:8px}.badnote{padding:12px;border-left:4px solid #b94b4b;background:#fff0ee;border-radius:8px}.progress{height:8px;border-radius:20px;background:#e1ebec;overflow:hidden}.progress>div{background:#078b82;height:100%;transition:width .2s}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.field{display:block;margin:10px 0}.field span{display:block;font-size:13px;font-weight:700;margin-bottom:4px}input:not([type=checkbox]),select,textarea{width:100%;padding:11px;border:1px solid #b9cbd0;border-radius:9px;font:inherit;background:white;color:#18333e}textarea{min-height:75px}input[type=checkbox]{width:20px;height:20px;vertical-align:middle;accent-color:#087f80}.check{display:block;padding:10px 0;border-bottom:1px solid #edf1f2}.wound{height:145px;border-radius:18px;background:radial-gradient(ellipse at center,#bb6462 0 18%,#a13e4c 19% 35%,#e7aa93 36% 60%,#f3c5a7 61%);display:grid;place-items:end center;padding:12px;color:#5c302d;font-size:13px;margin:12px 0}.step{font-size:13px;font-weight:750;color:#087f80}.toolbar{display:flex;gap:5px;flex-wrap:wrap}.toolbar button{font-size:13px}.mono{font-family:ui-monospace,monospace;white-space:pre-wrap;font-size:12px}.score{font-weight:800;color:#087f80}@media(max-width:550px){.grid{grid-template-columns:1fr}button{margin:4px 2px}.card{padding:15px}}@media print{button,.progress{display:none!important}.card{box-shadow:none}}
+
+/* WoundQuest Cozy Village theme: original pastel island-game aesthetic */
+:root{font-family:"Trebuchet MS",ui-rounded,system-ui,sans-serif;background:#bde8cf;color:#4e5141}
+body{min-height:100vh;background:
+radial-gradient(circle at 8% 7%,#fff9c8 0 34px,transparent 36px),
+radial-gradient(ellipse at 80% 8%,#ffffff80 0 35px,transparent 37px),
+radial-gradient(ellipse at 93% 13%,#ffffff80 0 29px,transparent 31px),
+repeating-linear-gradient(135deg,#c3ecca 0 50px,#bce7c7 50px 100px);
+background-attachment:fixed}
+main{max-width:880px;padding:20px 14px 100px;position:relative}
+header{position:relative;text-align:center;background:#fff5dc;border:5px solid #fefcf0;border-radius:42px 42px 32px 32px;padding:22px 17px 17px;margin:10px 0 22px;box-shadow:0 9px 0 #8cbba6,0 16px 24px #4c876d28;transform:rotate(-.35deg)}
+header:before{content:"✿";position:absolute;top:-17px;left:19px;font-size:39px;color:#f6a4a5;text-shadow:2px 2px white}
+header:after{content:"☘";position:absolute;top:-20px;right:20px;font-size:38px;color:#67ad7b;text-shadow:2px 2px white}
+header h1{font-size:clamp(27px,6vw,41px);line-height:1.2;letter-spacing:-1px;color:#6a7953;text-shadow:2px 3px 0 #fff; margin:10px 0}
+header .muted{color:#81785f;font-size:14px}
+.badge{background:#f8d88e;color:#6f5a38;border:2px solid #fff9df;border-radius:100px;padding:8px 15px;box-shadow:0 3px 0 #ddba72;font-size:12px}
+.card{background:#fffdf2;border:4px solid #fff9e8;border-radius:29px;padding:23px;margin:20px 0;box-shadow:0 7px 0 #a1c9aa,0 13px 22px #4b896b20;animation:cardPop .32s ease-out}
+@keyframes cardPop{from{opacity:.4;transform:translateY(9px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+h2{font-size:clamp(20px,4.5vw,26px);color:#68784f;letter-spacing:-.4px}h3{color:#6f8062}
+p{line-height:1.65}.muted{color:#817e6d}
+button{background:#e7a76d;color:#fffef6;border:3px solid #fce4b8;border-radius:21px;padding:12px 17px;box-shadow:0 5px 0 #bd7c4e;transition:transform .12s,box-shadow .12s;touch-action:manipulation}
+button:hover{filter:brightness(1.04);transform:translateY(-2px);box-shadow:0 7px 0 #bd7c4e}
+button:active{transform:translateY(4px);box-shadow:0 1px 0 #bd7c4e}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #f3ae77;outline-offset:3px}
+button.secondary{background:#cce9d8;border-color:#e9f8e9;color:#4e775d;box-shadow:0 5px 0 #95c5a7}
+button:disabled{opacity:.48;box-shadow:none;transform:none}
+.grid{gap:15px}
+.tile{position:relative;background:#fff9e8;color:#5e654e;border:3px solid #ead7ae;border-radius:23px;box-shadow:0 4px 0 #d6c19b;padding:17px;text-align:left;line-height:1.4;min-height:84px}
+.tile:hover{background:#fff1c8;border-color:#e8bb79;box-shadow:0 5px 0 #d6ae79}
+.tile.selected{background:#e2f5d7;border-color:#84bc8b;box-shadow:0 4px 0 #78ad7f}
+.tile.bad{background:#ffe5e0;border-color:#d96d67}
+.tile strong{display:block;font-size:18px;color:#66805b;margin-bottom:8px}
+.notice,.good,.badnote{border-left-width:6px;border-radius:16px;padding:14px 16px}
+.notice{background:#fff1cc;border-color:#e7ad63;color:#775d3e}
+.good{background:#e2f6df;border-color:#8dc18a;color:#4e7150}
+.badnote{background:#ffebde;border-color:#df9077;color:#8e564c}
+.progress{height:17px;background:#fef5dc;border:3px solid #fff;border-radius:50px;box-shadow:0 3px 0 #8fbd9e;overflow:hidden}
+.progress>div{background:repeating-linear-gradient(110deg,#f4c776 0 18px,#edb65e 18px 36px);border-radius:30px}
+.step{font-size:13px;font-weight:900;color:#668e6b;text-align:center;background:#e5f5db;border:2px solid #fff9e5;border-radius:99px;padding:9px 13px;width:max-content;max-width:100%;margin:15px auto}
+.field span{color:#6c7559;font-size:14px}
+input:not([type=checkbox]),select,textarea{border:3px solid #e9ddbd;border-radius:15px;background:#fffef8;color:#514f43;padding:13px}
+input[type=checkbox]{accent-color:#88b988;width:21px;height:21px}
+.check{border-bottom:2px dashed #e5dfc9;padding:13px 4px;line-height:1.5}
+.wound{border:8px solid #f3e4c6;border-radius:27px;box-shadow:inset 0 0 0 3px #fff8e7;min-height:170px}
+.score{color:#6d956c;font-size:20px}
+@media(max-width:550px){main{padding:13px 11px 70px}header{border-radius:30px;padding:20px 12px}.card{padding:17px;border-radius:25px}.grid{grid-template-columns:1fr}.tile{min-height:72px}button{padding:13px 14px}}
+@media(prefers-reduced-motion:reduce){.card{animation:none}button{transition:none}}
+@media print{body{background:white}header,.card{box-shadow:none}}
 </style></head><body><main><header><span class="badge">Praxisanleitung · WoundQuest 2.0</span><h1>🩹 Wundversorgung trainieren</h1><p class="muted">Zwei Fallbeispiele · Materialwagen · hygienischer Ablauf · Wunddokumentation · Praxischeck</p></header><div id="app"></div><p class="muted">Nur didaktische Simulation. Kein Ersatz für ärztliche Anordnung, Hygienestandard oder fachliche Beurteilung. Keine personenbezogenen Daten eingeben; Eingaben bleiben in dieser Browsersitzung.</p></main><script>
 const cases=[{"title":"Dekubitus Kategorie 3 · Kreuzbein","intro":"Fiktiver Bewohner, 84 Jahre, stark eingeschränkte Mobilität. Druckverletzung Kategorie 3 sakral. Eine individuelle Wundversorgungsanordnung liegt vor.","findings":{"length":"3,5","width":"2,0","depth":"0,8","exudate":"mäßig","bed":"Granulation und gelbliche Fibrinbeläge","edge":"teilweise mazeriert","pain":"4","skin":"periwundär leicht gerötet"},"plan":"Anordnung im Übungsfall: sterile NaCl-0,9%-Lösung zur schonenden Reinigung, nicht haftende sterile Wundkontaktlage, darüber saugfähiger Schaumverband, hautschonende Fixierung. Druckentlastung individuell planen.","required":["nacl","compress","contact","foam","gloves","sterile","bag","handrub"],"dress":"foam","extra":"Druckentlastung","risk":"Fehlende Druckentlastung","quiz":[["Welche Aussage passt zur Kategorie 3?",["Vollständiger Hautverlust, Fettgewebe kann sichtbar sein","Nur intakte gerötete Haut","Immer freiliegender Knochen"],0],["Was ist neben der Wundversorgung wichtig?",["Druckentlastung und Mobilitätsförderung","Nur häufigerer Verbandwechsel","Dauerhaft Rückenlage"],0]]},{"title":"Chronisches Ulkus · Schienbein","intro":"Fiktiver Bewohner, 79 Jahre, Diabetes mellitus, chronisches Ulkus am Schienbein. Die Ätiologie und arterielle Durchblutung sind nicht ausreichend geklärt. Es liegt noch keine sichere neue Versorgungsanordnung vor.","findings":{"length":"2,8","width":"1,6","depth":"0,2","exudate":"gering","bed":"rötliches Gewebe mit vereinzelten Belägen","edge":"unregelmäßig","pain":"3","skin":"trockene Umgebungshaut"},"plan":"Für diesen Fall muss zunächst die fachliche Abklärung der Ursache, Durchblutung und die Versorgungsanordnung erfolgen. Keine eigenmächtige Kompression oder Auswahl einer definitiven Wundtherapie. Nach Freigabe kann eine verordnete, geeignete atraumatische Versorgung geübt werden.","required":["nacl","compress","contact","gloves","sterile","bag","handrub"],"dress":"contact","extra":"Abklärung veranlassen","risk":"Ungeklärte Durchblutung","quiz":[["Was beweist der Diabetes mellitus?",["Ein diabetisches Ulkus am Schienbein","Keine eindeutige Ulkusursache","Immer eine venöse Ursache"],1],["Was gilt vor Kompression?",["Gefäßsituation und fachliche Anordnung klären","Nach Gefühl fest wickeln","Kompression ist immer harmlos"],0]]}],materials=[["handrub","Händedesinfektionsmittel","🧴"],["gloves","Unsterile Handschuhe","🧤"],["sterile","Sterile Handschuhe / Instrumente","🩺"],["compress","Sterile Kompressen","⬜"],["nacl","NaCl 0,9 %","💧"],["contact","Atraumatische Kontaktlage","▤"],["foam","Saugfähiger Schaumverband","▣"],["bag","Abwurfbehälter","🗑️"],["antiseptic","Antiseptikum (nur bei Indikation)","🧪"],["compression","Kompressionsverband","🧣"],["cotton","Unsterile Watte","☁️"]];
 let s={page:0,caseId:0,selected:[],actions:[],errors:[],points:0,assessment:{},doc:{},checks:[],quizAnswers:[],cleared:false,approval:false};const app=document.getElementById("app");
